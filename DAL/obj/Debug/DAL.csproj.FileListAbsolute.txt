@@ -127,3 +127,4 @@ E:\final\DAL\obj\Debug\DAL.dll
 E:\final\DAL\obj\Debug\DAL.pdb
 E:\final\DAL\obj\Debug\DAL.Migrations.fix1.resources
 E:\final\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+E:\final\DAL\obj\Debug\DAL.Migrations.fix2.resources

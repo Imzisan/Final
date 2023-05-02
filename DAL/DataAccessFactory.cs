@@ -92,5 +92,19 @@ namespace DAL
         {
             return new SellerRepo();
         }
+
+        public static IRepoDeliveryMan<DeliveryMan, string, bool> DeliveryManData()
+        {
+            return new DeliveryManRepo();
+        }
+        public static IRepoDeliveryMan<AssignProduct, int, bool> AssignProductData()
+        {
+            return new AssignProductRepo();
+        }
+        public static IRepoDeliveryMan<DeliveryManReview, int, bool> DeliveryManReviewData()
+        {
+            return new ManageUserDeliveryManReviewRepo();
+        }
+
     }
 }

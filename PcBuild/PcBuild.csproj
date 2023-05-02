@@ -279,7 +279,10 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AssignProductController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\DelivaryManController.cs" />
+    <Compile Include="Controllers\DeliveryManReviewController.cs" />
     <Compile Include="Controllers\ManageCartController.cs" />
     <Compile Include="Controllers\ManageFeedBackController.cs" />
     <Compile Include="Controllers\ManageOrderController.cs" />

@@ -1,5 +1,6 @@
 ﻿using BLL.DTOs;
 using BLL.Services;
+using PostComment.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,7 @@ namespace PcBuild.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message = ex.Message });
             }
         }
+        [Logged]
         [HttpGet]
         [Route("api/admin/get/{id}/moderator")]
         public HttpResponseMessage AdminAddedModeratorData(int id)
@@ -56,6 +58,7 @@ namespace PcBuild.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message = ex.Message });
             }
         }
+        
         [HttpPost]
         [Route("api/admin/insert")]
         public HttpResponseMessage Insert(AdminDTO Admin)

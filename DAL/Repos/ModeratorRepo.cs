@@ -63,20 +63,7 @@ namespace DAL.Repos
             return false;
         }
 
-        public List<Moderator> GetOrderProductDetails()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Moderator> GetOrderProductDetails(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Moderator> GetProductsInCart(int id)
-        {
-            throw new NotImplementedException();
-        }
+   
     }
 
 }

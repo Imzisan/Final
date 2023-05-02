@@ -32,7 +32,7 @@
 
             //    });
             //}
-            Random random = new Random();
+            //Random random = new Random();
             //for (int i= 1; i <=10; i++)
             //{
             //    context.Products.AddOrUpdate(new Models.Product

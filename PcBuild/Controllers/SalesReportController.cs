@@ -1,5 +1,6 @@
 ﻿using BLL.DTOs;
 using BLL.Services;
+using PostComment.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,7 +45,7 @@ namespace PcBuild.Controllers
             }
         }
 
-        //SalesReport seller man find 
+        [Logged]
         [HttpGet]
         [Route("api/salesReport/{id}/moderator")]
         public HttpResponseMessage SalesReportModeraor(int id)

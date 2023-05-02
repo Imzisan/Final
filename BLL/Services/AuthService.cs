@@ -41,7 +41,6 @@ namespace BLL.Services
             var res = DataAccessFactory.AdminAuthData().Authenticate(sname, password);
             if (res)
             {
-
                 var token = new Token();
                 token.SellerId = sname;
                 token.CreatedAt = DateTime.Now;

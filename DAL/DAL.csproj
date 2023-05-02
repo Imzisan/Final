@@ -76,9 +76,9 @@
     <Compile Include="Interfaces\IRepoUsers.cs" />
     <Compile Include="Interfaces\IRepoZisan.cs" />
     <Compile Include="Interfaces\ISearch.cs" />
-    <Compile Include="Migrations\202305021937526_alltables.cs" />
-    <Compile Include="Migrations\202305021937526_alltables.designer.cs">
-      <DependentUpon>202305021937526_alltables.cs</DependentUpon>
+    <Compile Include="Migrations\202305022028006_fix1.cs" />
+    <Compile Include="Migrations\202305022028006_fix1.designer.cs">
+      <DependentUpon>202305022028006_fix1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -119,8 +119,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202305021937526_alltables.resx">
-      <DependentUpon>202305021937526_alltables.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202305022028006_fix1.resx">
+      <DependentUpon>202305022028006_fix1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

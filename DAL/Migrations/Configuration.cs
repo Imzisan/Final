@@ -14,7 +14,7 @@
 
         protected override void Seed(DAL.PcBuildContext context)
         {
-            /*for (int i = 1; i <= 5; i++)
+            for (int i = 1; i <= 5; i++)
             {
                 context.Sellers.AddOrUpdate(new Models.Seller
                 {
@@ -163,7 +163,7 @@
                     TotalSales = random.Next(20000, 50000),
                     ReportedBy = random.Next(1, 11),
                 });
-            }*/
+            }
         }
     }
 }

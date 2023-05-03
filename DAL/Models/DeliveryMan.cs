@@ -11,9 +11,6 @@ namespace DAL.Models
     public class DeliveryMan
     {
         [Key]
-        public int Id { get; set; }
-        [Required]
-        [StringLength(100)]
         public string Uname { get; set; }
         [Required]
         [StringLength(100)]
@@ -22,7 +19,7 @@ namespace DAL.Models
         [StringLength(100)]
         public string Email { get; set; }
         [Required]
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         [Required]
         [StringLength(100)]
         public string Address { get; set; }

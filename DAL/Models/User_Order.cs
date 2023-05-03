@@ -23,6 +23,12 @@ namespace DAL.Models
 
         [Required]
         public string PaymentBy { get; set; }
+        public virtual ICollection<orderinformation> orderinformations { get; set; }
+        public User_Order()
+        {
+            orderinformations = new List<orderinformation>();
+
+        }
 
     }
 }

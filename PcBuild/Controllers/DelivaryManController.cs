@@ -100,7 +100,7 @@ namespace PcBuild.Controllers
 
             }
         }
-        [HttpPost]
+     /*   [HttpPost]
         [Route("api/DeliveryMans/change-password/{Uname}")]
         public HttpResponseMessage ChangePassword(string Uname, ChangePasswordDTO changePass)
         {
@@ -121,6 +121,6 @@ namespace PcBuild.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound);
             }
-        }
+        }*/
     }
 }

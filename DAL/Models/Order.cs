@@ -28,10 +28,13 @@ namespace DAL.Models
         [ForeignKey("productby")]
         public Product Product { get; set; }
         public virtual ICollection<ProductOrder> ProductOrders { get; set; }
+        public virtual ICollection<orderinformation> orderinformations { get; set; }
+
 
         public Order ()
         {
             ProductOrders = new List<ProductOrder> ();
+            orderinformations = new List<orderinformation>();
         }
     }
 }

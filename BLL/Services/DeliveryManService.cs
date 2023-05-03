@@ -25,9 +25,9 @@ namespace BLL.Services
             return mapped;
         }
 
-        public static DeliveryManDTO Get(string Uname)
+        public static DeliveryManDTO Get(string Id)
         {
-            var data = DataAccessFactory.DeliveryManData().Read(Uname);
+            var data = DataAccessFactory.DeliveryManData().Read(Id);
             var cfg = new MapperConfiguration(c =>
             {
                 c.CreateMap<DeliveryMan, DeliveryManDTO>();
@@ -53,6 +53,21 @@ namespace BLL.Services
             return false;
         }
 
+        public static bool Create(ModeratorDTO Moderator)
+        {
+            var cfg = new MapperConfiguration(c =>
+            {
+                c.CreateMap<ModeratorDTO, Moderator>();
+            });
+            var mapper = new Mapper(cfg);
+            var mapped = mapper.Map<Moderator>(Moderator);
+            var res = DataAccessFactory.ModeratorData().Created(mapped);
+
+            if (res) return true;
+            return false;
+
+        }
+
         public static bool Update(DeliveryManDTO deliveryman)
         {
             var cfg = new MapperConfiguration(c =>
@@ -66,18 +81,19 @@ namespace BLL.Services
             if (res) return true;
             return false;
         }
-        public static bool Delete(string Uname)
+        public static bool Delete(string Id)
         {
-            return DataAccessFactory.DeliveryManData().Delete(Uname);
+            return DataAccessFactory.DeliveryManData().Delete(Id);
         }
-        public static bool ChangePassword(string Uname, ChangePasswordDTO changePasswordDTO)
-        {
-            var deliveryman = DataAccessFactory.DeliveryManData().Read(Uname);
-            if (changePasswordDTO.CurrentPassword == deliveryman.Password)
-            {
-                return DataAccessFactory.ChangePassData().ChangePassword(deliveryman.Uname, changePasswordDTO.Password);
-            }
-            return false;
-        }
+
+       // public static bool ChangePassword(string Id, ChangePasswordDTO changePasswordDTO)
+      //  {
+          //  var deliveryman = DataAccessFactory.DeliveryManData().Read(Id);
+          //  if (changePasswordDTO.CurrentPassword == deliveryman.Password)
+          //  {
+              //  return DataAccessFactory.ChangePassData().DeliChangePassword(deliveryman.Uname, changePasswordDTO.Password);
+           // }
+           // return false;
+        //}
     }
 }

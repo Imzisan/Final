@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace DAL.Models
 {
     public class ReciveProduct
     {
+        [Key]
         public int ID { get; set; }
         [ForeignKey("AssignProduct")]
         public int ap_id { get; set; }

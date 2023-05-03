@@ -77,13 +77,10 @@
     <Compile Include="Interfaces\IRepoUsers.cs" />
     <Compile Include="Interfaces\IRepoZisan.cs" />
     <Compile Include="Interfaces\ISearch.cs" />
-    <Compile Include="Migrations\202305022028006_fix1.cs" />
-    <Compile Include="Migrations\202305022028006_fix1.designer.cs">
-      <DependentUpon>202305022028006_fix1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202305022116315_fix2.cs" />
-    <Compile Include="Migrations\202305022116315_fix2.designer.cs">
-      <DependentUpon>202305022116315_fix2.cs</DependentUpon>
+    <Compile Include="Interfaces\passchange.cs" />
+    <Compile Include="Migrations\202305030035317_newfix1.cs" />
+    <Compile Include="Migrations\202305030035317_newfix1.designer.cs">
+      <DependentUpon>202305030035317_newfix1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -132,11 +129,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202305022028006_fix1.resx">
-      <DependentUpon>202305022028006_fix1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305022116315_fix2.resx">
-      <DependentUpon>202305022116315_fix2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202305030035317_newfix1.resx">
+      <DependentUpon>202305030035317_newfix1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

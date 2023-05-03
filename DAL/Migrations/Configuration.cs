@@ -4,6 +4,7 @@
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using System.Xml.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<DAL.PcBuildContext>
     {
@@ -164,6 +165,68 @@
                     ReportedBy = random.Next(1, 11),
                 });
             }
+            for (int i = 1; i <= 40; i++)
+            {
+                context.DeliveryMans.AddOrUpdate(new Models.DeliveryMan
+                {
+                    Name = Guid.NewGuid().ToString().Substring(0, 10),
+                    Uname = "DeliveryMan-" + i,
+                    Email = Guid.NewGuid().ToString().Substring(0, 10),
+                    PhoneNumber = Guid.NewGuid().ToString().Substring(0, 10),
+                    Address = Guid.NewGuid().ToString().Substring(0, 10),
+                    Password = Guid.NewGuid().ToString().Substring(0, 10),
+                    DMR_id = random.Next(1, 6),
+                    rp_id = random.Next(1, 6),
+                    orinfo_id = random.Next(1, 6),
+
+                });
+            }
+            for (int i = 1; i <= 50; i++)
+            {
+                context.DeliveryManReviews.AddOrUpdate(new Models.DeliveryManReview
+                {
+                    Id = i,
+                    review = Guid.NewGuid().ToString().Substring(0, 10),
+                    date = DateTime.Now,
+                    u_id = random.Next(1, 49),
+                   
+                });
+            }
+            for (int i = 1; i <= 50; i++)
+            {
+                context.orderinformations.AddOrUpdate(new Models.orderinformation
+                {
+                    Id = i,
+                    or_id = random.Next(1, 49),
+                   
+
+                });
+            }
+            for (int i = 1; i <= 50; i++)
+            {
+                context.AssignProducts.AddOrUpdate(new Models.AssignProduct
+                {
+                    Id = i,
+                    ProductName = Guid.NewGuid().ToString().Substring(0, 10),
+                    ProductDescription = Guid.NewGuid().ToString().Substring(0, 10),
+                    ProductType = Guid.NewGuid().ToString().Substring(0, 10),
+                    DeliveryDate = DateTime.Now,
+
+
+                });
+            }
+            for (int i = 1; i <= 50; i++)
+            {
+                context.ReciveProducts.AddOrUpdate(new Models.ReciveProduct
+                {
+                    ID = i,
+                    ap_id = random.Next(1, 40),
+                    status = Guid.NewGuid().ToString().Substring(0, 10),
+                   
+
+                });
+            }
         }
     }
 }
+    

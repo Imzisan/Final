@@ -16,11 +16,11 @@ namespace DAL.Models
         public string review { get; set; }
         [Required]
         public DateTime date { get; set; }
-        //Required]
-        //ForeignKey("user")]
-        //ublic int u_id { get; set; }
+        [Required]
+        [ForeignKey("User")]
+        public int u_id { get; set; }
 
-        //ublic virtual User user { get; set; }
+        public virtual User User { get; set; }
         public virtual ICollection<DeliveryMan> DeliveryMan { get; set; }
         public DeliveryManReview()
         {

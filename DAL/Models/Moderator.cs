@@ -32,8 +32,14 @@ namespace DAL.Models
         public int AddedBy { get; set; }
 
         public Admin Admin { get; set; }
+        [ForeignKey("AssignProduct")]
+
+        public int AssignProductBy { get; set; }
+
+        public AssignProduct AssignProduct { get; set; }
 
         public virtual ICollection<SalesReport> SalesReports { get; set; }
+
 
 
 

@@ -30,5 +30,7 @@ namespace DAL
         public DbSet<DeliveryManReview> DeliveryManReviews { get; set; }
         public DbSet<AssignProduct> AssignProducts { get; set; }
         public DbSet<ReciveProduct> ReciveProducts { get; set; }
+        public DbSet<orderinformation> orderinformations { get; set; }
+
     }
 }

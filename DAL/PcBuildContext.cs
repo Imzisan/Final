@@ -28,5 +28,10 @@ namespace DAL
         public DbSet<Token> Tokens { get; set; }
         public DbSet<OrderDetails> OrderDetails { get; set; }
 
+        public DbSet<TopSearchSelleingproduct> TopSearchSelleingproducts { get;set; }
+
+        public DbSet<SellerReview> SellerReviews { get; set; }
+
+
     }
 }

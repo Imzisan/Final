@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace PcBuild.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class SellerController : ApiController
     {
         [HttpGet]
@@ -100,8 +102,9 @@ namespace PcBuild.Controllers
 
             }
         }
+
         [HttpPost]
-        [Route("api/seller/change-password/{Sname}")]
+        [Route("api/seller/change-password/{Sname}/mail")]
         public HttpResponseMessage ChangePassword(string Sname, ChangePasswordDTO changePass)
         {
             var seller = SellerService.Get(Sname);
@@ -110,11 +113,13 @@ namespace PcBuild.Controllers
                 try
                 {
                     var res = SellerService.ChangePassword(Sname, changePass);
-                    return Request.CreateResponse(HttpStatusCode.OK, res);
+                    return Request.CreateResponse(HttpStatusCode.OK, SellerPassChangeEmailService.SendEmail(Sname));
+                    //return Request.CreateResponse(HttpStatusCode.OK, res);
                 }
                 catch (Exception ex)
                 {
                     return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+
                 }
             }
             else

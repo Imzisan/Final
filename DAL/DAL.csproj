@@ -77,21 +77,25 @@
     <Compile Include="Interfaces\IRepoZisan.cs" />
     <Compile Include="Interfaces\ISearch.cs" />
     <Compile Include="Interfaces\ITop.cs" />
-    <Compile Include="Migrations\202305150945183_orderA.cs" />
-    <Compile Include="Migrations\202305150945183_orderA.designer.cs">
-      <DependentUpon>202305150945183_orderA.cs</DependentUpon>
+    <Compile Include="Migrations\202305151803541_mir.cs" />
+    <Compile Include="Migrations\202305151803541_mir.designer.cs">
+      <DependentUpon>202305151803541_mir.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202305151311041_Sort.cs" />
-    <Compile Include="Migrations\202305151311041_Sort.designer.cs">
-      <DependentUpon>202305151311041_Sort.cs</DependentUpon>
+    <Compile Include="Migrations\202305151831351_SllEma.cs" />
+    <Compile Include="Migrations\202305151831351_SllEma.designer.cs">
+      <DependentUpon>202305151831351_SllEma.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202305151312336_Sort1.cs" />
-    <Compile Include="Migrations\202305151312336_Sort1.designer.cs">
-      <DependentUpon>202305151312336_Sort1.cs</DependentUpon>
+    <Compile Include="Migrations\202305151909406_ToSea.cs" />
+    <Compile Include="Migrations\202305151909406_ToSea.designer.cs">
+      <DependentUpon>202305151909406_ToSea.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202305151317419_Sort2.cs" />
-    <Compile Include="Migrations\202305151317419_Sort2.designer.cs">
-      <DependentUpon>202305151317419_Sort2.cs</DependentUpon>
+    <Compile Include="Migrations\202305152039281_SellRev.cs" />
+    <Compile Include="Migrations\202305152039281_SellRev.designer.cs">
+      <DependentUpon>202305152039281_SellRev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305152042213_SellRevAgingUS.cs" />
+    <Compile Include="Migrations\202305152042213_SellRevAgingUS.designer.cs">
+      <DependentUpon>202305152042213_SellRevAgingUS.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -102,7 +106,9 @@
     <Compile Include="Models\ProductOrder.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\SalesReport.cs" />
+    <Compile Include="Models\SellerReview.cs" />
     <Compile Include="Models\Token.cs" />
+    <Compile Include="Models\TopSearchSelleingproduct.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\User_Order.cs" />
     <Compile Include="PcBuildContext.cs" />
@@ -125,8 +131,11 @@
     <Compile Include="Repos\ProductRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
     <Compile Include="Repos\SalesReportRepo.cs" />
+    <Compile Include="Repos\SellerRatingRepo.cs" />
     <Compile Include="Repos\SellerRepo.cs" />
     <Compile Include="Repos\TokenRepo.cs" />
+    <Compile Include="Repos\TopSearchSelleingproductsRepo.cs" />
+    <Compile Include="Repos\TSProducRepo.cs" />
     <Compile Include="Repos\UserRepo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -134,17 +143,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202305150945183_orderA.resx">
-      <DependentUpon>202305150945183_orderA.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202305151803541_mir.resx">
+      <DependentUpon>202305151803541_mir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305151311041_Sort.resx">
-      <DependentUpon>202305151311041_Sort.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202305151831351_SllEma.resx">
+      <DependentUpon>202305151831351_SllEma.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305151312336_Sort1.resx">
-      <DependentUpon>202305151312336_Sort1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202305151909406_ToSea.resx">
+      <DependentUpon>202305151909406_ToSea.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202305151317419_Sort2.resx">
-      <DependentUpon>202305151317419_Sort2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202305152039281_SellRev.resx">
+      <DependentUpon>202305152039281_SellRev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305152042213_SellRevAgingUS.resx">
+      <DependentUpon>202305152042213_SellRevAgingUS.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

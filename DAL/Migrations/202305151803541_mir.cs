@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class orderA : DbMigration
+    public partial class mir : DbMigration
     {
         public override void Up()
         {
@@ -105,6 +105,26 @@
                 .Index(t => t.SelleBy)
                 .Index(t => t.ProductId)
                 .Index(t => t.Product_Id);
+            
+            CreateTable(
+                "dbo.OrderDetails",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        OrderId = c.Int(nullable: false),
+                        ProductId = c.Int(nullable: false),
+                        SelleBy = c.String(nullable: false, maxLength: 128),
+                        Quantity = c.Int(nullable: false),
+                        price = c.String(nullable: false),
+                        Status = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Orders", t => t.OrderId, cascadeDelete: true)
+                .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: false)
+                .ForeignKey("dbo.Sellers", t => t.SelleBy, cascadeDelete: true)
+                .Index(t => t.OrderId)
+                .Index(t => t.ProductId)
+                .Index(t => t.SelleBy);
             
             CreateTable(
                 "dbo.Sellers",
@@ -220,6 +240,9 @@
             DropForeignKey("dbo.Orders", "SelleBy", "dbo.Sellers");
             DropForeignKey("dbo.Products", "Order_Id", "dbo.Orders");
             DropForeignKey("dbo.Orders", "ProductId", "dbo.Products");
+            DropForeignKey("dbo.OrderDetails", "SelleBy", "dbo.Sellers");
+            DropForeignKey("dbo.OrderDetails", "ProductId", "dbo.Products");
+            DropForeignKey("dbo.OrderDetails", "OrderId", "dbo.Orders");
             DropForeignKey("dbo.Carts", "pid", "dbo.Products");
             DropForeignKey("dbo.SalesReports", "Admin_Id", "dbo.Admins");
             DropForeignKey("dbo.SalesReports", "ReportedBy", "dbo.Moderators");
@@ -231,6 +254,9 @@
             DropIndex("dbo.Reviews", new[] { "uid" });
             DropIndex("dbo.ProductOrders", new[] { "pid" });
             DropIndex("dbo.ProductOrders", new[] { "Oid" });
+            DropIndex("dbo.OrderDetails", new[] { "SelleBy" });
+            DropIndex("dbo.OrderDetails", new[] { "ProductId" });
+            DropIndex("dbo.OrderDetails", new[] { "OrderId" });
             DropIndex("dbo.Orders", new[] { "Product_Id" });
             DropIndex("dbo.Orders", new[] { "ProductId" });
             DropIndex("dbo.Orders", new[] { "SelleBy" });
@@ -248,6 +274,7 @@
             DropTable("dbo.Reviews");
             DropTable("dbo.ProductOrders");
             DropTable("dbo.Sellers");
+            DropTable("dbo.OrderDetails");
             DropTable("dbo.Orders");
             DropTable("dbo.Products");
             DropTable("dbo.Carts");

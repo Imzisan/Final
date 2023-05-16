@@ -30,11 +30,14 @@ namespace DAL.Models
         public virtual ICollection<Review> Reviews { get; set; }
         public virtual ICollection<Cart> Carts { get; set; }
 
+        public virtual ICollection<SellerReview> SellerReviews { get; set; }
+
         public User()
         {
             UserOrders = new List<User_Order>();
             Reviews = new List<Review>();
             Carts = new List<Cart>();
+            SellerReviews = new List<SellerReview>();
         }
 
     }

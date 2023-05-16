@@ -295,7 +295,9 @@
     <Compile Include="Controllers\ManageSearchController.cs" />
     <Compile Include="Controllers\SalesReportController.cs" />
     <Compile Include="Controllers\SellerController.cs" />
+    <Compile Include="Controllers\SellerRateingController.cs" />
     <Compile Include="Controllers\TopReportController.cs" />
+    <Compile Include="Controllers\TopSearchSelleingproductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
